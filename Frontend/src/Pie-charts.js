@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie } from 'recharts';
 
-
+//DIAGRAMME CIRCULAIRE
 export default function PieCharts({data}) {
   //console.log(data.data);
   return (
