@@ -9,7 +9,7 @@ import {
     YAxis,
    
 } from 'recharts';
-
+//DIAGRAMME EN LIGNE CONTINUE
 export default function LineCharts({data}) {
 
   return (
