@@ -9,13 +9,12 @@ import '@coreui/coreui/dist/css/coreui.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
+  //contient le json récupéré de l'api
   const [data, setdata] = useState([]);
+  //dynamiser l'apparence du navbar dans le dashboard
   const [visible, setVisible] = useState(false);
 
-
-//fetchData was called in a useEffect hook with an empty dependency array, 
-//indicating that the function is executed as soon as the App component is mounted.
-  // Hook to load state data fetched from requests. 
+  // useEffect est un Hook utilisé pour les donnés recupérés a partir des requetes
 useEffect(() => {
  
     const fetchData = async () => {
@@ -23,8 +22,8 @@ useEffect(() => {
       try{
         
         const jsonData = await axios.get("http://127.0.0.1:8000/api/getData");
-       
-        setdata(jsonData.data);//data?.data
+       //mettre a jour le contenu de la variable data
+        setdata(jsonData.data);
 
        
       } catch(error){
@@ -34,11 +33,8 @@ useEffect(() => {
     fetchData();
   }, []);
 
-  return (//data={data}
+  return (
     <div style={{overflowX: "hidden" }}>
-       
-      
-
     <CNavbar expand="lg" colorScheme="light" className="bg-light">
       <CContainer fluid>
        
@@ -86,8 +82,6 @@ useEffect(() => {
     </CNavbar>
 
   <CRow>
-
-
 
   <CSidebar>
     
@@ -155,22 +149,15 @@ useEffect(() => {
     </CRow>
 
     </CCol>
-    
         </CRow>
-       
        <CFooter>
   <div>
-   
   </div>
   <div>
     <span>template</span>
     <CLink href="https://coreui.io">CoreUI</CLink>
   </div>
-</CFooter>
- 
-
-
-     
+</CFooter>    
     </div>
   );
 }
