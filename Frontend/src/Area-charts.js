@@ -3,7 +3,7 @@ import {
      AreaChart, Area, XAxis, YAxis, CartesianGrid,Tooltip
    
 } from 'recharts';
-
+//DIAGRAMME EN AIRES
 export default function AreaCharts({data}) {
   
   return (
